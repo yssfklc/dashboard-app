@@ -66,52 +66,17 @@ app.post('/api/products', async (request, response) => {
   }
 
 });
-// app.get('api/orders', async (req, res) => {
-//   // const query = {_id: new ObjectId("61cc167a57a0b1781e9a0ff9")};
-//   const query = {"cart_item.product": new ObjectId("6212e886be0097373dcaa3f1")};
-//   const database = await client.db("store");
-//   const products = await database.collection("orders").find(query).toArray(function(err, results){
-//     console.log(results);
-// });;
-//   console.log(products.length);
 
-//   if (products) {
-
-//       // console.log(result);
-//       res.send(products);
-//   } else {
-
-//   }
-
-// });
-// app.get('/orders', async (req, res) => {
-//     // const query = {_id: new ObjectId("61cc167a57a0b1781e9a0ff9")};
-//     const query = {"cart_item.product": new ObjectId("6212e886be0097373dcaa3f1")};
-//     const database = await client.db("store");
-//     const products = await database.collection("orders").find(query).toArray(function(err, results){
-//       console.log(results);
-//   });;
-//     console.log(products.length);
-
-//     if (products) {
-
-//         // console.log(result);
-//         res.send(products);
-//     } else {
-
-//     }
-
-// });
-
+//listen port
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-
+//Be sure db is connected
 mongoose.connect(process.env.DB_URL)
 .then(() => {
 
-    console.log('test');
+    console.log('Db successfully connected.');
     
 })
   .catch((error)=>{
