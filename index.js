@@ -28,7 +28,7 @@ app.get('/api/vendors', async (req, res) => {
   if (products) {
       res.send(products);
   } else {
-
+      res.send('No product is found check /api/vendors end point');
   }
 
 });
@@ -62,7 +62,7 @@ app.post('/api/products', async (request, response) => {
       // console.log(result);
       response.send({orders:orderCount, products:products});
   } else {
-
+    res.send('No product or order is found check /api/prodocts end point');
   }
 
 });
