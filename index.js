@@ -11,6 +11,10 @@ const app = express()
 const port = 5500
 app.use(express.json());
 app.use(cors());
+app.use(express.static("client/build"));
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
@@ -66,6 +70,11 @@ app.post('/api/products', async (request, response) => {
   }
 
 });
+
+app.get('*', (req, res, next)=>{
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+})
+
 
 //listen port
 app.listen(port, () => {

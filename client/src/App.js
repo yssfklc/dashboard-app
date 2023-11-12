@@ -25,7 +25,7 @@ function App() {
   //get vendors to List into Dropdown Menu
   const getVendors = async()=>{
     try{
-      const response = await fetch('http://localhost:5500/api/vendors')
+      const response = await fetch('/api/vendors')
       if(response.ok){
         const result = await response.json();
         setVendors(result);
@@ -40,7 +40,7 @@ function App() {
     const newGraphData = [0,0,0,0,0,0,0,0,0,0,0,0];
     setIsLoading({...isLoading, load:true})
     try{
-      const response = await fetch('http://localhost:5500/api/products', {
+      const response = await fetch('/api/products', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
