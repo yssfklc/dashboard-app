@@ -1,10 +1,11 @@
 const express = require('express');
 const { ObjectId } = require('mongodb');
+const path = require('path');
 const mongoose=require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
 const client = new MongoClient(process.env.DB_URL);
-var cors = require('cors')
+var cors = require('cors');
 
 
 const app = express()

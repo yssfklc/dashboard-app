@@ -180,7 +180,7 @@ function App() {
           </TableHead>
           <TableBody>
             {products.map((row) => (
-              <TableRow
+              row.quantity>0?(<TableRow
                 key={row.name}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
@@ -188,7 +188,7 @@ function App() {
                   {row.name}
                 </TableCell>
                 <TableCell align="right">{row.quantity}</TableCell>
-              </TableRow>
+              </TableRow>):null
             ))}
           </TableBody>
         </Table>
