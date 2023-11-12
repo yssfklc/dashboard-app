@@ -1,4 +1,4 @@
-# lonca-app
+# Dashboard-app
 This app includes one line chart and one table and the pictures and a video are added below.
 - This app is developed using MERN and Material UI library.
 - Error handling cases needs to be added.
